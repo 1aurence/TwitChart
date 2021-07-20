@@ -4,7 +4,8 @@
   "description": "App to display charts &amp; graphs based on a collection of Tweets from the Twitter API",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
