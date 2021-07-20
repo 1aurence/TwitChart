@@ -1,0 +1,26 @@
+{
+  "name": "TwitChart",
+  "version": "1.0.0",
+  "description": "App to display charts &amp; graphs based on a collection of Tweets from the Twitter API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1aurence/TwitChart.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/1aurence/TwitChart/issues"
+  },
+  "homepage": "https://github.com/1aurence/TwitChart#readme",
+  "dependencies": {
+    "chart.js": "^3.4.1",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1"
+  }
+}
