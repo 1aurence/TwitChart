@@ -1,0 +1,16 @@
+<h1>Query Results</h1>
+
+<ul class="list-group">
+  <% for (var i = 0; i < data.length; i++) { %>
+  <li class="list-group-item">
+    <div class="card">
+      <div class="card-body">
+        <p>User: <%= data[i].user.name %></p>
+        <p><%= data[i].text%></p>
+        <small>Posted: <%= data[i].created_at %></small>
+      </div>
+    </div>
+  </li>
+
+  <% } %>
+</ul>

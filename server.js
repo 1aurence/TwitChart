@@ -2,38 +2,32 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const port = 3000;
-const ejs = require("ejs");
-const Twit = require("twit");
+const bodyParser = require("body-parser");
+const expressLayouts = require("express-ejs-layouts");
+  const TestTweetRoutes = require('./routes/TweetRoutes/TestTweetRoutes')
 
-const T = new Twit({
-  consumer_key: process.env["CONSUMER-KEY"],
-  consumer_secret: process.env["CONSUMER-SECRET-KEY"],
-  access_token: process.env["ACCESS-TOKEN"],
-  access_token_secret: process.env["ACCESS-TOKEN-SECRET"],
-  timeout_ms: 60 * 1000,
-  strictSSL: true,
-});
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
 
-T.get(
-  "search/tweets",
-  { q: "banana since:2021-07-20", count: 10 },
-  function (err, data, response) {
-    if (err) {
-      console.log(err);
-      return;
-    } else {
-      console.log(data);
-    }
-  }
-);
-
-// set the view engine to ejs
+// Static Files
+app.use(express.static("public"));
+// Set Templating Engine
+app.use(expressLayouts);
+app.set("layout", "./layouts/layout");
 app.set("view engine", "ejs");
 
+app.use("/tweets", TestTweetRoutes);
+
 // index page
-app.get("/", function (req, res) {
+app.get("/", (req, res) => {
   res.render("pages/index");
 });
+
+// about page
+app.get("/about", (req, res) => {
+  res.render("pages/about");
+});
+
 
 app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`);
