@@ -16,12 +16,14 @@ app.use(expressLayouts);
 app.set("layout", "./layouts/layout");
 app.set("view engine", "ejs");
 
+// all requests starting with /tweets
 app.use("/tweets", TestTweetRoutes);
 
 // index page
 app.get("/", (req, res) => {
   res.render("pages/index");
 });
+
 
 // about page
 app.get("/about", (req, res) => {

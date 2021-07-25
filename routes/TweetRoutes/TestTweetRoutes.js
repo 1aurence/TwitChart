@@ -1,7 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const TestTweetController = require("../../controllers/TestTweetController");
+const TweetController = require("../../controllers/TweetController");
 
-router.post("", TestTweetController.getTweets);
+router.get("/search-tweets", TweetController.showSearchTweetsPage);
+router.post("/search-tweets", TweetController.searchTweets);
+
+router.get("/compare-tweets", TweetController.showCompareTweetsPage);
+router.post("/compare-tweets", TweetController.compareTweets);
 
 module.exports = router;

@@ -11,17 +11,28 @@ const T = new Twit({
 });
 
 module.exports = {
-  getTweets(req, res) {
+  showSearchTweetsPage(req, res) {
+    res.render("../views/pages/search_tweets");
+  },
+  searchTweets(req, res) {
+    console.log("inside searchTweets");
     const { keyword, amount } = req.body;
 
     T.get("search/tweets", { q: keyword, count: amount })
       .then((result) => {
         let data = result.data.statuses;
         for (let i = 0; i < data.length; i++) {
-          console.log(data[i])
+          console.log(data[i]);
         }
-        res.render("pages/search-results", { data: result.data.statuses });
+        res.render("pages/search_results", { data: result.data.statuses });
       })
       .catch((err) => console.log(err));
+  },
+
+  showCompareTweetsPage(req, res) {
+    res.render("../views/pages/compare_tweets");
+  },
+  compareTweets(req, res) {
+  
   },
 };
