@@ -1,42 +1,28 @@
 <h1>Compare Tweets</h1>
 
 <form action="/tweets/compare-tweets" method="POST" novalidate>
-  <div class="form-group">
-    <input
-      type="text"
-      name="keyword"
-      class="form-control"
-      id=""
-      placeholder="1st Tweet keyword"
-    />
-  </div>
-  <div class="form-group">
-    <input
-      type="text"
-      name="keyword"
-      class="form-control"
-      id=""
-      placeholder="2nd Tweet keyword"
-    />
-  </div>
-
-  <div class="form-group">
-    <div class='input-group date' id='datetimepicker3'>
-       <input type='text' class="form-control" />
-       <span class="input-group-addon">
-       <span class="glyphicon glyphicon-time"></span>
-       </span>
+  <div class="row">
+    <div class="col">
+      <input
+        type="text"
+        name="keyword"
+        class="form-control"
+        id=""
+        placeholder="1st Tweet keyword"
+      />
     </div>
- </div>
-
+    <div class="col mb-3">
+      <input
+        type="text"
+        name="keyword"
+        class="form-control"
+        id=""
+        placeholder="2nd Tweet keyword"
+      />
+    </div>
+  </div>
 
   <button type="submit" class="btn btn-primary">Get Tweets</button>
 </form>
 
-<script type="text/javascript">
-    $(function () {
-        $('#datetimepicker3').datetimepicker({
-            format: 'LT'
-        });
-    });
- </script>
+<script type="text/javascript"></script>
