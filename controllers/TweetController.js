@@ -15,9 +15,9 @@ module.exports = {
     res.render("../views/pages/search_tweets");
   },
   searchTweets(req, res) {
-    const { keyword, amount } = req.body;
-
-    T.get("search/tweets", { q: keyword, count: amount })
+    const { keyword, amount, start_date, end_date } = req.body;
+    console.log(start_date);
+    T.get("search/tweets", { q: keyword, count: amount, since_id: start_date, until: end_date})
       .then((result) => {
         let data = result.data.statuses;
         res.render("pages/search_results", { data: result.data.statuses });
