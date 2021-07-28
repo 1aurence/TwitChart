@@ -1,7 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const app = express();
-const port = 3000;
+const port = 3000 || process.env.PORT
 const bodyParser = require("body-parser");
 const expressLayouts = require("express-ejs-layouts");
 const TestTweetRoutes = require("./routes/TweetRoutes/TestTweetRoutes");
@@ -33,5 +33,5 @@ app.get("/about", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`App listening at http://localhost:${port}`);
+  console.log(`App listening on port: ${port}`);
 });
