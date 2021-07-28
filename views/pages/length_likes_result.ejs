@@ -1,16 +1,16 @@
-<div class="mt-3">
+<div class="mt-3 d-flex flex-column align-items-center">
   <h1>Query Results: <%= data.length %></h1>
 
   <ul class="list-group" id="search-results">
     <% for (var i = 0; i < data.length; i++) { %>
     <li class="list-group-item">
-      <div class="card">
+      <div class="card bg-light">
         <div class="card-body">
           <p>User: <%= data[i].user.name %></p>
           <p><%= data[i].text%></p>
           <div class="d-flex">
-            <p class="mr-3">Length: <%= data[i].text.length %></p>
-            <p>Likes: <%= data[i].favorite_count %></p>
+            <p class="mr-3"><b>Length: <%= data[i].text.length %></b></p>
+            <p><b>Likes: <%= data[i].favorite_count %></b></p>
           </div>
           <small>Posted: <%= data[i].created_at %></small>
         </div>
@@ -25,7 +25,9 @@
     <h2 class="mt-4">Likes and Length of Tweet</h2>
     <canvas id="myChart"></canvas>
   </div>
+  
 </div>
+
 <script>
   let data = JSON.parse($("#data").text());
   $("#data").remove();
