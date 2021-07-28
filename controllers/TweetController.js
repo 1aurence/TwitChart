@@ -18,7 +18,6 @@ module.exports = {
   },
   compareLengthLikes(req, res) {
     const { keyword, amount, start_date, end_date } = req.body;
-    console.log(start_date);
     T.get("search/tweets", {
       q: keyword,
       count: amount,
