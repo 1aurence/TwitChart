@@ -1,6 +1,9 @@
 # TwitChart
 App to display charts &amp; graphs based on a collection of Tweets from the Twitter API
 
+# View App
+https://twit-chart.herokuapp.com/
+
 # Setup Instructions
 1. `git clone https://github.com/1aurence/TwitChart.git`
 2. `cd TwitChart`
