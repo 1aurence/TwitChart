@@ -3,8 +3,8 @@ const router = express.Router();
 const TweetController = require("../../controllers/TweetController");
 
 // handle search-tweets routes 
-router.get("/search-tweets", TweetController.showSearchTweetsPage);
-router.post("/search-tweets", TweetController.searchTweets);
+router.get("/length-likes", TweetController.showLengthLkesPage);
+router.post("/length-likes", TweetController.compareLengthLikes);
 
 // handle compare-tweets routes
 router.get("/compare-tweets", TweetController.showCompareTweetsPage);

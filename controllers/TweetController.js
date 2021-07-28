@@ -11,10 +11,10 @@ const T = new Twit({
 });
 
 module.exports = {
-  showSearchTweetsPage(req, res) {
+  showLengthLkesPage(req, res) {
     res.render("../views/pages/search_tweets");
   },
-  searchTweets(req, res) {
+  compareLengthLikes(req, res) {
     const { keyword, amount, start_date, end_date } = req.body;
     console.log(start_date);
     T.get("search/tweets", { q: keyword, count: amount, since_id: start_date, until: end_date})
