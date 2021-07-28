@@ -1,7 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const app = express();
-const port = 3000 || process.env.PORT
+const port = 3000 || process.env.PORT;
 const bodyParser = require("body-parser");
 const expressLayouts = require("express-ejs-layouts");
 const TestTweetRoutes = require("./routes/TweetRoutes/TestTweetRoutes");
@@ -10,8 +10,8 @@ const TestTweetRoutes = require("./routes/TweetRoutes/TestTweetRoutes");
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Static Files
-app.use(express.static(__dirname + '/public'));
-  // Set Templating Engine
+app.use(express.static(__dirname + "/public"));
+// Set Templating Engine
 app.use(expressLayouts);
 app.set("layout", "./layouts/layout");
 app.set("view engine", "ejs");
