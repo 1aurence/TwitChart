@@ -1,5 +1,7 @@
 const Twit = require("twit");
 
+console.log(process.env["CONSUMER_KEY"]);
+
 // instantiate Twit.js
 const T = new Twit({
   consumer_key: process.env["CONSUMER_KEY"],
