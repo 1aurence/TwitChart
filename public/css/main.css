@@ -3,7 +3,23 @@ html {
   height: 100%;
   width: 100%;
 }
-
+footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 60px;
+  width: 100%;
+  overflow: hidden;
+  color: white;
+  font-size: 1.1em;
+  padding: 0 35% 0 35%;
+}
+footer a {
+  /* color: white; */
+}
+footer p {
+  margin: 0;
+}
 #myChart {
   height: 200px;
   width: 800px;
