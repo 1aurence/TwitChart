@@ -1,28 +1,26 @@
-<h1>Compare Tweets</h1>
+  <h1>Compare Tweets</h1>
 
-<form action="/tweets/compare-tweets" method="POST" novalidate>
-  <div class="row">
-    <div class="col">
-      <input
-        type="text"
-        name="keyword"
-        class="form-control"
-        id=""
-        placeholder="1st Tweet keyword"
-      />
+  <form action="/tweets/compare-tweets" method="POST" novalidate>
+    <div class="row">
+      <div class="col">
+        <input
+          type="text"
+          name="keyword"
+          class="form-control"
+          id=""
+          placeholder="1st Tweet keyword"
+        />
+      </div>
+      <div class="col mb-3">
+        <input
+          type="text"
+          name="keyword"
+          class="form-control"
+          id=""
+          placeholder="2nd Tweet keyword"
+        />
+      </div>
     </div>
-    <div class="col mb-3">
-      <input
-        type="text"
-        name="keyword"
-        class="form-control"
-        id=""
-        placeholder="2nd Tweet keyword"
-      />
-    </div>
-  </div>
 
-  <button type="submit" class="btn btn-primary">Get Tweets</button>
-</form>
-
-<script type="text/javascript"></script>
+    <button type="submit" class="btn btn-primary">Get Tweets</button>
+  </form>

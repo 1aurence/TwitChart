@@ -14,47 +14,39 @@
   </li>
 
   <% } %>
+  <span id="data" hidden> <%= JSON.stringify(data); %> </span>
 </ul>
-<h2 class="mt-4">Test Chart With Dummy Data</h2>
-<canvas id="myChart" width="400" height="400"></canvas>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<div class="chart-container">
+  <h2 class="mt-4">Length of Tweets</h2>
+  <canvas id="myChart"></canvas>
+</div>
 
 <script>
+  let data = JSON.parse($("#data").text());
+  $("#data").remove();
+  let tweetLengthArr = [];
+  for (let i in data) {
+    tweetLengthArr.push({
+      tweetLength: data[i].text.length,
+      favoriteCount: data[i].favorite_count,
+    });
+  }
+  let a = tweetLengthArr.map((t) => t.tweetLength);
+  console.log(a);
+  // chart
   let ctx = document.getElementById("myChart").getContext("2d");
   let myChart = new Chart(ctx, {
     type: "bar",
     data: {
-      labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+      labels: tweetLengthArr.map((t) => t.favoriteCount),
       datasets: [
         {
-          label: "# of Votes",
-          data: [12, 19, 3, 5, 2, 3],
-          backgroundColor: [
-            "rgba(255, 99, 132, 0.2)",
-            "rgba(54, 162, 235, 0.2)",
-            "rgba(255, 206, 86, 0.2)",
-            "rgba(75, 192, 192, 0.2)",
-            "rgba(153, 102, 255, 0.2)",
-            "rgba(255, 159, 64, 0.2)",
-          ],
-          borderColor: [
-            "rgba(255, 99, 132, 1)",
-            "rgba(54, 162, 235, 1)",
-            "rgba(255, 206, 86, 1)",
-            "rgba(75, 192, 192, 1)",
-            "rgba(153, 102, 255, 1)",
-            "rgba(255, 159, 64, 1)",
-          ],
-          borderWidth: 1,
+          label: "Tweet Length",
+          data: tweetLengthArr.map((t) => t.tweetLength),
+          backgroundColor: 'blue'
         },
       ],
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true,
-        },
-      },
     },
   });
 </script>
