@@ -2,4 +2,7 @@
   height: 90px;
   width: 10px;
 }
-    
+#search-results {
+    max-height: 400px;
+    overflow: scroll;
+}
